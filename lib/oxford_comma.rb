@@ -4,11 +4,7 @@ def oxford_comma(array)
   elsif array.size == 2
     array.join(" and ")
   elsif array.size >= 3
-    string = [", and "]
-    string.push array.last
-    array.pop
     array = array.join(", ")
-    string = string.join("")
-    array += string
+    array.gsub(/(.*),(.*)/, '\1, and\2')
   end
 end
